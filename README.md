@@ -5,7 +5,7 @@ A GitHub Action for creating a new SemVer tag and release branch.
 ## Usage
 
 ```yaml
-# Bump version every 3 weeks
+# Run every 3 weeks
 name: Bump version
 on:
   schedule:
@@ -35,10 +35,10 @@ If no `#major`, `#minor` or `#patch` tag is found in any commit message since th
 **Environment Variables**
 
 - **GITHUB_TOKEN** **_(required)_** - Required for permission to push tags and branches to the repo.
-- **INITIAL_VERSION** **_(optional)** - If no tags exist, this specifies the initial tag. Defaults to `0.1.0`.
-- **DRY_RUN** _(optional)_ - Prints the next version without creating a new branch or tag. Possible values are `true` and `false` (default).
+- **INITIAL_VERSION** _(optional)_ - If no tags exist, specifies the initial tag. Defaults to `0.1.0`.
+- **DRY_RUN** _(optional)_ - Print the next version without creating a new branch or tag. Possible values are `true` and `false` (default).
 - **VERBOSE** _(optional)_ - Print git logs. For some projects these logs may be very large. Possible values are `true` (default) and `false`.
-- **RELEASE_BRANCH_PREFIX** _(optional)_ - Specifies the prefix for the release branch name. Defaults to `release` (e.g. `release/0.1.0`).
+- **RELEASE_BRANCH_PREFIX** _(optional)_ - Specify the prefix for the release branch name. Defaults to `release` (e.g. `release/0.1.0`).
 - **MAJOR_VERSION_TOKEN** _(optional)_ - Change the default `#major` version commit message string.
 - **MINOR_VERSION_TOKEN** _(optional)_ - Change the default `#minor` version commit message string
 - **PATCH_VERSION_TOKEN** _(optional)_ - Change the default `#patch` version commit message string.
