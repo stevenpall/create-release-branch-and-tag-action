@@ -1,9 +1,7 @@
-FROM node:18-alpine
+FROM node:20.5
 
-RUN apk update && \
-  apk add --no-cache bash git && \
-  npm install -g semver
+RUN npm install -g semver
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
