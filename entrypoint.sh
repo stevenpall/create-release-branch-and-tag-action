@@ -11,6 +11,9 @@ major_version_token=${MAJOR_STRING_TOKEN:-#major}
 minor_version_token=${MINOR_STRING_TOKEN:-#minor}
 patch_version_token=${PATCH_STRING_TOKEN:-#patch}
 
+# Mark /github/workspace as a safe directory (seems to be necessary)
+git config --global --add safe.directory /github/workspace
+
 if ${verbose}; then
     set -x
 fi
