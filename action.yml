@@ -1,0 +1,6 @@
+name: 'Create git release branch and tag'
+description: 'Create new release branch and bump semver tag'
+author: 'Steven Pall'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
