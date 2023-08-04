@@ -1,5 +1,6 @@
 #!/bin/bash
-set -eo pipefail
+
+set -e
 
 # Read in some config env vars
 initial_version=${INITIAL_VERSION:-0.1.0}
