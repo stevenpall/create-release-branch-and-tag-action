@@ -1,2 +1,3 @@
 # create-release-branch-and-tag-action
-GitHub Action for creating a release branch and tag
+
+A GitHub Action for creating a new semver tag and release branch based on it
