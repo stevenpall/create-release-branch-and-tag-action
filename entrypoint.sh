@@ -6,7 +6,6 @@ initial_version=${INITIAL_VERSION:-0.1.0}
 dry_run=${DRY_RUN:-false}
 verbose=${VERBOSE:-false}
 release_branch_prefix=${RELEASE_BRANCH_PREFIX:-release}
-default_semvar_bump=${DEFAULT_BUMP:-minor}
 major_version_token=${MAJOR_STRING_TOKEN:-#major}
 minor_version_token=${MINOR_STRING_TOKEN:-#minor}
 patch_version_token=${PATCH_STRING_TOKEN:-#patch}
@@ -44,7 +43,7 @@ case "$log" in
     *$major_version_token* ) part="major";;
     *$minor_version_token* ) part="minor";;
     *$patch_version_token* ) part="patch";;
-    * )
+    * ) part="minor";;
 esac
 new_tag=$(semver -i "${part}" "$tag")
 
@@ -67,6 +66,6 @@ git tag "${new_tag}"
 
 # Push new release branch and tag
 echo "Pushing new branch (${new_branch}) and tag (${new_tag})"
-#git push origin --atomic "${new_branch}" "${new_tag}"
+git push origin --atomic "${new_branch}" "${new_tag}"
 
 echo "Operation completed successfully."
