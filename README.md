@@ -18,6 +18,8 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Bump version, push branch and tag
       uses: stevenpall/create-release-branch-and-tag-action@0.1.0
